@@ -1,6 +1,5 @@
 var express = require('express'),
-  router = express.Router(),
-  mongoose = require('mongoose');
+  router = express.Router();
 
 exports.landing = (req, res) => {
   res.render('landing', {

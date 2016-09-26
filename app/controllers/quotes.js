@@ -12,7 +12,15 @@ exports.list = (req, res, next) => {
     });
   })
 }
-
+exports.edit = (req, res, next) => {
+  Quote.find({_id: req.params.id}, (err, item) => {
+    if (err) return next(err);
+    res.render('quotes/edit.handlebars', {quote: item[0], stylesheets: ["quotes"]})
+  })
+}
+exports.update = (req, res, next) => {
+  Quote.update({_id: req.params.id}, {author: req.body.name, content: req.body.quote}, function() {res.redirect('/quotes');});
+}
 exports.add = (req, res) => {
   var newQuote = new Quote({author: req.body.name, content: req.body.quote});
   newQuote.save();

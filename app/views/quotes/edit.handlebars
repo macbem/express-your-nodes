@@ -1,0 +1,14 @@
+<main>
+  <div class="hero">
+    <h1>Edit a quote</h1>
+    {{#with quote}}
+    <form action="/quotes/{{_id}}" method="POST">
+      <div>
+        <input type="text" placeholder="name" value="{{author}}" name="name">
+        <input type="text" placeholder="quote" value="{{content}}" name="quote">
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+    {{/with}}
+  </div>
+</main>
