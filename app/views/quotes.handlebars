@@ -1,6 +1,6 @@
 <main>
   <div class="hero">
-    <h1>Quotes</h1>
+    <h1>Add a new quote</h1>
     <form action="/quotes" method="POST">
       <div>
         <input type="text" placeholder="name" name="name">
@@ -10,8 +10,11 @@
     </form>
     <a href="#quotes-container" class="arrow-down"></a>
   </div>
-  {{#if quote}}
-  <div class="container quotes-container" id="quotes-container">
+</main>
+{{#if quote}}
+<div class="quotes-container" id="quotes-container">
+  <div class="container">
+    <h2>Quotes</h2>
     <div class="row">
       {{#each quote}}
         <div class="col-md-6">
@@ -23,6 +26,6 @@
       {{/each}}
     </div>
   </div>
-  {{/if}}
-</main>
+</div>
+{{/if}}
 <script type="text/javascript" src="/js/quotes.js"></script>

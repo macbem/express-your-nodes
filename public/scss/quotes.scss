@@ -21,6 +21,7 @@ form {
   bottom: 150px;
   &:before {
     content: "";
+    top: 0;
     left: 10px;
     width: 40px;
     height: 40px;
@@ -37,9 +38,10 @@ form {
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
+  background: linear-gradient(rgba(#000, 0.7), rgba(#000, 0.7)), url('/img/stardust.png');
 }
 input {
-  background: rgba(#fff, 0.05);
+  background: rgba(#fff, 0.1);
   color: #ececec;
   outline: none;
   border: 2px solid transparent;
@@ -61,6 +63,13 @@ button[type="submit"] {
   color: white;
   height: 50px;
   width: 300px;
+}
+h2 {
+  color: white;
+  font-weight: 100;
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 80px;
 }
 blockquote {
   color: white;
