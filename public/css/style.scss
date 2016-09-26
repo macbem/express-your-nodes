@@ -1,14 +1,64 @@
+@import 'globals';
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px "Lato", Helvetica, Arial, sans-serif;
 }
-form {
-	margin: 30px auto;
-	text-align: center;
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+main {
+  min-height: calc(100vh);
+  background: linear-gradient(rgba(#000, .2), rgba(#000, .2)), url('/img/background-main-road.jpeg') 0/cover;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  height: 100px;
+  width: 100vw;
+  overflow-x: hidden;
+  display: flex;
+  background: rgba(#fff, 0.2);
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+  h2 {
+    z-index: 99999;
+    font-size: 32px;
+    font-weight: 100;
+    margin: 0;
+    a, a:hover, a:active, a:focus {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+  nav {
+    height: 100px;
+    padding: 20px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+    a {
+      font-weight: 100;
+      font-size: 16px;
+      padding: 20px;
+      color: $green;
+      &:focus, &:hover {
+        color: mix($green, black, 80%);
+      }
+    }
+  }
 }
 h1 {
-	text-align: center;
-}
-a {
-  color: #00B7FF;
+  color: white;
+  font-weight: 100;
+  text-align: center;
 }

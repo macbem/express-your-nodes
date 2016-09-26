@@ -1,21 +1,28 @@
-<h1>Quotes</h1>
-<form action="/quotes" method="POST">
-    <input type="text" placeholder="name" name="name">
-    <input type="text" placeholder="quote" name="quote">
-    <button type="submit">Submit</button>
-</form>
-{{#if quote}}
-<div class="container">
-	<div class="row">
-		{{#each quote}}
-			<div class="col-md-6">
-				<blockquote class="blockquote">
-					<p>{{content}}</p>
-					<footer class="blockquote-footer">{{author}}</footer>
-				</blockquote>	
-			</div>
-		{{/each}}		
-	</div>
-</div>
-
-{{/if}}
+<main>
+  <div class="hero">
+    <h1>Quotes</h1>
+    <form action="/quotes" method="POST">
+      <div>
+        <input type="text" placeholder="name" name="name">
+        <input type="text" placeholder="quote" name="quote">
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+    <a href="#quotes-container" class="arrow-down"></a>
+  </div>
+  {{#if quote}}
+  <div class="container quotes-container" id="quotes-container">
+    <div class="row">
+      {{#each quote}}
+        <div class="col-md-6">
+          <blockquote class="blockquote">
+            <p>{{content}}</p>
+            <footer class="blockquote-footer">{{author}}</footer>
+          </blockquote>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+  {{/if}}
+</main>
+<script type="text/javascript" src="/js/quotes.js"></script>

@@ -1,19 +1,23 @@
 var gulp = require('gulp'),
   nodemon = require('gulp-nodemon'),
+  autoprefixer = require('gulp-autoprefixer'),
   plumber = require('gulp-plumber'),
   livereload = require('gulp-livereload'),
   sass = require('gulp-sass');
 
 gulp.task('sass', function () {
-  gulp.src('./public/css/*.scss')
+  gulp.src('./public/scss/*.scss')
     .pipe(plumber())
     .pipe(sass())
+    .pipe(autoprefixer({
+      browsers: ['last 2 versions']
+    }))
     .pipe(gulp.dest('./public/css'))
     .pipe(livereload());
 });
 
 gulp.task('watch', function() {
-  gulp.watch('./public/css/*.scss', ['sass']);
+  gulp.watch('./public/scss/*.scss', ['sass']);
 });
 
 gulp.task('develop', function () {
