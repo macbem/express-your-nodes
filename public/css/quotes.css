@@ -12,6 +12,19 @@ a, a:hover, a:active, a:focus {
   text-decoration: none;
   cursor: pointer; }
 
+.btn {
+  display: block;
+  margin: 20px auto;
+  border: none;
+  font-size: 20px;
+  color: white;
+  height: 50px;
+  max-width: 300px; }
+  .btn.success {
+    background: #2ecc71; }
+  .btn.danger {
+    background: #d9534f; }
+
 .hero {
   height: 100vh;
   display: -ms-flexbox;
@@ -72,14 +85,7 @@ input {
   input:focus {
     border-color: rgba(0, 255, 72, 0.4); }
 
-button[type="submit"] {
-  display: block;
-  background: #2ecc71;
-  margin: 20px auto;
-  border: none;
-  font-size: 20px;
-  color: white;
-  height: 50px;
+.btn {
   width: 300px; }
 
 h2 {

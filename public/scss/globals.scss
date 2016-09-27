@@ -17,3 +17,18 @@ a, a:hover, a:active, a:focus {
   text-decoration: none;
   cursor: pointer;
 }
+.btn {
+  display: block;
+  margin: 20px auto;
+  border: none;
+  font-size: 20px;
+  color: white;
+  height: 50px;
+  max-width: 300px;
+  &.success {
+    background: #2ecc71;
+  }
+  &.danger {
+    background: #d9534f;
+  }
+}
