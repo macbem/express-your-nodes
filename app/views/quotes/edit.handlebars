@@ -2,13 +2,13 @@
   <div class="hero">
     <h1>Edit a quote</h1>
     {{#with quote}}
-    <form action="/quotes/{{_id}}" method="POST">
-      <div>
+    <form action="/quotes/{{_id}}" method="POST" id="editQuote">
         <input type="text" placeholder="name" value="{{author}}" name="name">
         <input type="text" placeholder="quote" value="{{content}}" name="quote">
-        <button type="submit">Submit</button>
-      </div>
+        <button class="btn btn-success" type="submit">Submit</button>
+        <button class="btn btn-danger" id="deleteQuote">Delete</button>
     </form>
     {{/with}}
   </div>
 </main>
+<script type="text/javascript" src="/js/quotes.js"></script>

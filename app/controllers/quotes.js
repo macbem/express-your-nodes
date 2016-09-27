@@ -12,6 +12,17 @@ exports.list = (req, res, next) => {
     });
   })
 }
+exports.delete = (req, res, next) => {
+  if (req.xhr) {
+    Quote.findOneAndRemove({_id: req.params.id}, (err, quote) => {
+      if (err) return next(err);
+      res.send('Success');
+    });
+  }
+  else {
+    res.status(403).send("Forbidden");
+  }
+}
 exports.edit = (req, res, next) => {
   Quote.find({_id: req.params.id}, (err, item) => {
     if (err) return next(err);
@@ -19,10 +30,17 @@ exports.edit = (req, res, next) => {
   })
 }
 exports.update = (req, res, next) => {
-  Quote.update({_id: req.params.id}, {author: req.body.name, content: req.body.quote}, function() {res.redirect('/quotes');});
+  if(req.xhr) {
+    Quote.update({_id: req.body.id}, {author: req.body.name, content: req.body.quote}, function() {res.send('Success');});
+  }
 }
 exports.add = (req, res) => {
-  var newQuote = new Quote({author: req.body.name, content: req.body.quote});
-  newQuote.save();
-  res.redirect('/quotes');
+  if (req.xhr) {
+    var newQuote = new Quote({author: req.body.name, content: req.body.quote});
+    newQuote.save();
+    res.json(newQuote);
+  }
+  else {
+    res.status(403).send("Forbidden");
+  }
 }
